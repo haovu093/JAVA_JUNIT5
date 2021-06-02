@@ -23,7 +23,6 @@ class testEmail {
     void test_weight(){
         String w1 = "55kg";
         assertThat(w1).isNotNull()
-                .startsWith("")
                 .contains("kg")
                 .doesNotContain("@#$%^&*()!?>")
                 .endsWith("kg");
@@ -31,12 +30,15 @@ class testEmail {
     }
     @Test
  void test_cmt() {
-        int[] arr = new int[]{145480170, 145633454, 3434332, 4343, 4343};
-            assertThat(arr).isNotNull();
-            assertThat(arr).hasSize(5);
+        String[] arr = new String[]{"145480179", "145633454", "3434332", "4343", "4343"};
            for( int i=0; i< arr.length;i++){
+               assertThat(arr[i]).isNotNull()
+                       .hasSize(9)
+                       .containsOnlyDigits();
+               }
+
            }
 
         }
-    }
+
 
